@@ -6,7 +6,8 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
-    path('anonymous', views.landingpage, name='landingpage'),
+    path('', views.landingpage, name='landingpage'),
+    path('anonymous/', views.landingpage, name='landingpage'),
     path("anonymous/login", views.login_view, name="login"),
     path("anonymous/logout", views.logout_view, name="logout"),
     path("anonymous/register", views.register, name="register"),
