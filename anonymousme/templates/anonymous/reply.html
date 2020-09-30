@@ -1,0 +1,41 @@
+{% extends "anonymous/register_lay.html" %}
+{% load static %}
+
+{% block title %}
+	Send {{profile}} a friendly message.
+{% endblock %}
+
+{% block boddy %}
+
+<div class="card fat" style="margin-top: 20px">
+    <div class="card-body">
+        {% if none %}
+            <P>There is no one with the username <span style="text-transform: capitalize;"><strong>{{none}}</strong></span> Try looking for any possible typos.</P>
+            <form method="GET" action="{% url 'landingpage' %}">
+                <div class="form-group m-0">
+                    <button type="submit" class="btn btn-primary btn-block">Go to Homepage</button>
+                </div>
+            </form>
+            
+        {% else %}
+            <h1 class="card-title text-center" style="text-transform: capitalize;">Say something Nice :)</h1>
+            <p style="margin-top: -15px;">
+                say something...
+            </p>
+            <div class="">
+                <form action="{% url 'send' profile %}" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <textarea required name="content" class="form-control" row="1" placeholder="Leave a message for {{profile}} here"></textarea>
+                    </div>
+                    <div class="form-group m-0">
+                        <button type="submit" class="btn btn-primary btn-block">
+                            Send
+                        </button>
+                    </div>
+                </form>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
