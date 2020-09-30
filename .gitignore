@@ -3,6 +3,10 @@
 .idea/
 __pycache__/*
 __pycache__/
+
+# migration stuffs
+anonymousme/migrations/
+anonymousme/migrations/*
+
 # database stuffs
-final/anonymousme/migrations/
 db.sqlite3
