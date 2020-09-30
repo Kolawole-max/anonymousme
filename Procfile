@@ -1,1 +1,1 @@
-web: gunicorn sticky.wsgi
+web: gunicorn final.wsgi --log-file -

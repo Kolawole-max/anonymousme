@@ -4,5 +4,5 @@
 __pycache__/*
 __pycache__/
 # database stuffs
-final/anonymousme/migrations
+final/anonymousme/migrations/
 db.sqlite3
