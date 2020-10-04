@@ -107,7 +107,8 @@ def send(request, username):
             return render(request, 'anonymous/reply.html', {
             'none' : username
         })
-
+    else:
+        return render(request, "anonymous/register.html")
 
 # Fetch API
 def load(request, username):

@@ -7,11 +7,10 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.landingpage, name='landingpage'),
-    path('anonymous/', views.landingpage, name='landingpage'),
-    path("anonymous/login", views.login_view, name="login"),
-    path("anonymous/logout", views.logout_view, name="logout"),
-    path("anonymous/register", views.register, name="register"),
-    path("anonymous/profile/<str:user_username>", views.profile, name="index"),
+    path("login", views.login_view, name="login"),
+    path("logout", views.logout_view, name="logout"),
+    path("register", views.register, name="register"),
+    path("profile/<str:user_username>", views.profile, name="index"),
     path('send/<str:username>', views.send, name='send'),
 
     # Fetch API
